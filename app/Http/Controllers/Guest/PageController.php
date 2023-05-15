@@ -11,6 +11,7 @@ class PageController extends Controller
 {
     public function index()
     {
+        /*
         $newTrain = new Train();
 
         $newTrain->id = 5;
@@ -23,7 +24,7 @@ class PageController extends Controller
         $newTrain->carriage_number = 6;
         $newTrain->in_time = true;
         $newTrain->cancelled = false;
-        //$newTrain->save();
+        $newTrain->save();*/
 
         $trains = Train::where('departure_time', 'like', '%' . date('d/m/Y') . '%')->get();
         return view('home', compact('trains'));
