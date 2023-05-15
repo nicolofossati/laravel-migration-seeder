@@ -25,7 +25,7 @@ class PageController extends Controller
         $newTrain->cancelled = false;
         //$newTrain->save();
 
-        $trains = Train::All();
+        $trains = Train::where('departure_time', 'like', '%' . date('d/m/Y') . '%')->get();
         return view('home', compact('trains'));
     }
 }
